@@ -9,10 +9,11 @@ function Dashboard(){
   const token = localStorage.getItem("token");
 
   useEffect(()=>{
-    axios.get(`${BASE_URL}/api/items`,{
-      headers:{token}
-    }).then(res=>setItems(res.data));
-  },[]);
+  axios.get(`${BASE_URL}/api/items`,{
+    headers:{token}
+  }).then(res=>setItems(res.data));
+},[token]);
+
 
   const add=async()=>{
     await axios.post(`${BASE_URL}/api/items`,{
