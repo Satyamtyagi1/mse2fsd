@@ -13,6 +13,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req,res)=>{
+  res.send("Backend is running successfully 🚀");
+});
+
 mongoose.connect("mongodb://satyamtyagi80064_db_user:SATYAM01@ac-kra4hkt-shard-00-00.oonsvuo.mongodb.net:27017,ac-kra4hkt-shard-00-01.oonsvuo.mongodb.net:27017,ac-kra4hkt-shard-00-02.oonsvuo.mongodb.net:27017/?ssl=true&replicaSet=atlas-13k1cl-shard-0&authSource=admin&appName=Cluster0/fsdmse")
 .then(()=>console.log("DB Connected"));
 
